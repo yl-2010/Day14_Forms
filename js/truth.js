@@ -15,6 +15,7 @@ function greet() {
 function trivia1() {
     let triviaAnswer = document.getElementById("trivia1-answer");
 
+    let fname = document.getElementById("fname").value;
 
     // get values from form
     let chocolateSelected = document.getElementById("chocolate").checked;
@@ -23,12 +24,12 @@ function trivia1() {
 
     // give result based off of what they selected
     if (chocolateSelected) {
-        triviaAnswer.innerHTML = fname + " , you are wrong. Sweet tooth eh?";
+        triviaAnswer.innerHTML = fname + ", you are wrong. Sweet tooth eh?";
     }
     else if (tunaSelected) {
-        triviaAnswer.innerHTML = fname + " , you are wrong. Rotten tuna, yuck!"
+        triviaAnswer.innerHTML = fname + ", you are wrong. Rotten tuna, yuck!"
     }
     else if (honeySelected) {
-        triviaAnswer.innerHTML = fname + " , you are correct!";
+        triviaAnswer.innerHTML = fname + ", you are correct!";
     }
 }
