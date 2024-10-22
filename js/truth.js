@@ -3,7 +3,7 @@ let fname = "";
 function greet() {
     let greetParagraph = document.getElementById("greet");
 
-    greetParagraph.style.color = "green"
+    greetParagraph.style.color = "purple"
 
     fname = document.getElementById("fname").value;
     let lname = document.getElementById("lname").value;
@@ -55,5 +55,37 @@ function q1() {
     }
     else {
         q1Answer.innerHTML = fname + ", select something!";
+    }
+}
+
+
+function q2() {
+    let q2Answer = document.getElementById("q2-answer");
+
+
+    // get values from form
+    let readSelected = document.getElementById("r4").checked;
+    let mathSelected = document.getElementById("r5").checked;
+    let chessSelected = document.getElementById("r6").checked;
+
+    // give result based off of what they selected
+    if ((readSelected && mathSelected) && !chessSelected){
+        q2Answer.innerHTML = fname + ", you are right. I like reading and math.";
+    }
+    else if ((readSelected && mathSelected) && chessSelected) {
+        q2Answer.innerHTML = fname + ", try again. This time, only check two boxes."
+    }
+    else if ((!readSelected && mathSelected) && chessSelected) {
+        q2Answer.innerHTML = fname + ", you are partially correct. One of those is correct.";
+    }
+    else if ((readSelected && !mathSelected) && chessSelected) {
+        q2Answer.innerHTML = fname + ", you are partially correct. One of those is correct.";
+    }
+    else if ((!readSelected && !mathSelected) && !chessSelected) {
+        q2Answer.innerHTML = fname + ", you are wrong. Try selecting something next time.";
+    }
+    
+    else {
+        q2Answer.innerHTML = fname + ", you are wrong. You should select more than one thing next time.";
     }
 }
